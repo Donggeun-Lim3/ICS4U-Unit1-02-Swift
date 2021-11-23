@@ -7,7 +7,7 @@ version 1.0
 since   2021-11-21
 */
 
-func BoardFoot(mass : Double) -> Double {
+func boardFoot(mass: Double) -> Double {
  // Calculate energy
  let energy = mass * 2.998e8 * 2.998e8
 
@@ -15,8 +15,7 @@ func BoardFoot(mass : Double) -> Double {
  return energy
 }
 
-
-enum InvalidInputError : Error {
+enum InvalidInputError: Error {
   case invalidInput
 }
 // Input
@@ -25,10 +24,10 @@ let massString = readLine()
 
 do {
  guard let mass = Double(massString!)
- else{
+ else {
    throw InvalidInputError.invalidInput
  }
-    let energy = BoardFoot(mass: mass)
+    let energy = boardFoot(mass: mass)
 
     // Output
     print("\(mass) kg of mass would produce \(energy)J of energy.")
